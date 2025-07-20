@@ -1,22 +1,36 @@
+---
+import Header from "@/components/header/header.astro";
+import Footer from "@/components/footer/footer.astro";
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = "Projet Vitrine Astro", description } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/favicon.png"/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-background font-sans antialiased">
+		<Header />
+		<main class="min-h-[calc(100vh-4rem)]">
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<script src="@/components/scripts/smooth-scrool.js"></script>
+
+<style is:global>
+	@import '../styles/globals.css';
+</style> 

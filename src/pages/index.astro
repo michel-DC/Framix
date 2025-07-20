@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Accueil - Projet Vitrine Astro">
+	<main class="container mx-auto px-4 py-8">
+		<div class="text-center mb-12">
+			<h1 class="text-4xl font-bold text-foreground mb-4">
+				Projet Vitrine Astro
+			</h1>
+			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+				Bienvenue dans votre projet Astro avec Tailwind CSS, shadcn/ui et Framer Motion intégrés !
+			</p>
+		</div>
+
+		<div class="mt-12 text-center">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground">
+				<span class="text-sm">✅ Tailwind CSS</span>
+				<span class="text-sm">✅ shadcn/ui</span>
+				<span class="text-sm">✅ Framer Motion</span>
+			</div>
+		</div>
+	</main>
 </Layout>
