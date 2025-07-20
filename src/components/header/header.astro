@@ -1,5 +1,133 @@
 ---
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 ---
 
-<h1>Header</h1>
+<header class="bg-white border-b border-[#EDEDED] sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      
+      <a href="/">
+      <div class="flex items-center space-x-3">
+        <img 
+          src="/favicon.png" 
+          alt="Framix Logo" 
+          class="w-8 h-8 rounded-lg"
+        />
+        <span class="text-xl font-bold text-[#101010]">Framix</span>
+      </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a 
+          href="#features" 
+          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
+        >
+          Fonctionnalités
+        </a>
+        <a 
+          href="#pricing" 
+          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
+        >
+          Tarifs
+        </a>
+        <a 
+          href="#faq" 
+          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
+        >
+          FAQ
+        </a>
+        <a 
+          href="/contact" 
+          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
+        >
+          Contact
+        </a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a
+          href="#demo"
+          class="hidden sm:inline-flex bg-[#635BFF] text-white font-semibold px-4 py-2 rounded-lg hover:bg-[#7D76FF] transition-colors"
+        >
+          Essayer gratuitement
+        </a>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden p-2 text-gray-600 hover:text-[#635BFF] transition-colors"
+          aria-label="Menu mobile"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+      </div>
+    </div>
+
+    <div 
+      id="mobile-menu" 
+      class="hidden md:hidden border-t border-[#EDEDED] bg-white"
+    >
+      <div class="px-4 py-6 space-y-4">
+        <a 
+          href="#features" 
+          class="block text-gray-600 hover:text-[#635BFF] transition-colors font-medium py-2"
+        >
+          Fonctionnalités
+        </a>
+        <a 
+          href="#pricing" 
+          class="block text-gray-600 hover:text-[#635BFF] transition-colors font-medium py-2"
+        >
+          Tarifs
+        </a>
+        <a 
+          href="#faq" 
+          class="block text-gray-600 hover:text-[#635BFF] transition-colors font-medium py-2"
+        >
+          FAQ
+        </a>
+        <a 
+          href="/contact" 
+          class="block text-gray-600 hover:text-[#635BFF] transition-colors font-medium py-2"
+        >
+          Contact
+        </a>
+        <a
+          href="#demo"
+          class="inline-block bg-[#635BFF] text-white font-semibold px-4 py-2 rounded-lg hover:bg-[#7D76FF] transition-colors mt-4"
+        >
+          Essayer gratuitement
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('hidden');
+      
+      if (isOpen) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+      }
+    });
+  }
+
+  if (mobileMenu && mobileMenuButton) {
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+      });
+    });
+  }
+</script>
