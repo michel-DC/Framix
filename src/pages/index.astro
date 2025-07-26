@@ -1,24 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import HeroSection from '@/components/sections/hero-section.astro';
 ---
 
 <Layout title="Framix - L'outil no-code fait pour vous">
-	<main class="container mx-auto px-4 py-8">
-		<div class="text-center mb-12">
-			<h1 class="text-4xl font-bold text-foreground mb-4">
-				Projet Vitrine Astro
-			</h1>
-			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Bienvenue dans votre projet Astro avec Tailwind CSS, shadcn/ui et Framer Motion intégrés !
-			</p>
-		</div>
-
-		<div class="mt-12 text-center">
-			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground">
-				<span class="text-sm">✅ Tailwind CSS</span>
-				<span class="text-sm">✅ shadcn/ui</span>
-				<span class="text-sm">✅ Framer Motion</span>
-			</div>
-		</div>
-	</main>
+	<HeroSection />
 </Layout>

@@ -1,0 +1,150 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<section class="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+  {/* Fond décoratif avec dégradé subtil */}
+  <div class="absolute inset-0 bg-gradient-to-br from-[#F2F2FF] via-white to-white opacity-50"></div>
+  
+  {/* Éléments décoratifs flottants */}
+  <div class="absolute top-20 left-10 w-32 h-32 bg-[#635BFF] rounded-full opacity-10 blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#7D76FF] rounded-full opacity-5 blur-3xl"></div>
+  
+  {/* Contenu principal */}
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+    {/* Badge "Nouveau" */}
+    <div class="inline-flex items-center gap-2 bg-[#E8FCEB] text-[#166534] px-4 py-2 rounded-full text-sm font-medium mb-8 border border-[#BBF7D0] animate-fade-in">
+      <span class="w-2 h-2 bg-[#22C55E] rounded-full animate-pulse"></span>
+      Nouveau : Création de landing pages par blocs
+    </div>
+
+    {/* Titre principal */}
+    <h1 class="text-5xl md:text-7xl font-bold text-[#101010] mb-6 leading-tight animate-fade-in-up">
+      Construisez des
+      <br />
+      <span class="text-[#635BFF] typing-animation">
+        landing pages
+      </span>
+    </h1>
+
+    {/* Sous-titre */}
+    <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay">
+      L'outil no-code qui transforme vos idées en landing pages professionnelles en quelques clics. 
+      <br class="hidden md:block" />
+      Plus de code, plus de complexité, juste du résultat.
+    </p>
+
+    {/* Boutons d'action */}
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up-delay-2">
+      <Button 
+        class="bg-[#635BFF] hover:bg-[#7D76FF] text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        size="lg"
+      >
+        Commencer gratuitement
+      </Button>
+      <Button 
+        variant="outline" 
+        class="border-2 border-[#EDEDED] hover:border-[#635BFF] hover:text-[#635BFF] px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+        size="lg"
+      >
+        Voir la démo
+      </Button>
+    </div>
+
+    {/* Statistiques */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up-delay-3">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-[#101010] mb-2">500+</div>
+        <div class="text-gray-600">Landing pages créées</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-[#101010] mb-2">50+</div>
+        <div class="text-gray-600">Blocs disponibles</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-[#101010] mb-2">5min</div>
+        <div class="text-gray-600">Temps de création</div>
+      </div>
+    </div>
+  </div>
+
+  {/* Indicateur de scroll */}
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-[#635BFF] rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-[#635BFF] rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animations personnalisées */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up-delay {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  /* Animation typing simple */
+  .typing-animation {
+    position: relative;
+  }
+
+  .typing-animation::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #635BFF;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Optimisation des polices */
+  h1 {
+    font-feature-settings: "liga" 1, "kern" 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Effet de hover sur les boutons */
+  button:hover {
+    transform: translateY(-2px);
+  }
+</style>
