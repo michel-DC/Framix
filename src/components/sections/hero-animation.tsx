@@ -18,12 +18,48 @@ const HeroAnimations: React.FC = () => {
         Nouveau : Création de landing pages par blocs
       </motion.div>
 
+      {/* Images en éventail derrière le titre
+      <div className="relative mb-8">
+        <div
+          className="absolute left-1/4 top-0 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-xl shadow-xl"
+          style={{ transform: "translate(-50%, -50%) rotate(-35deg)" }}
+        >
+          <img
+            src="/src/assets/images/hero-section/1.png"
+            alt="Illustration 1"
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+
+        <div
+          className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-xl z-10"
+          style={{ transform: "translate(-50%, -50%) rotate(0deg)" }}
+        >
+          <img
+            src="/src/assets/images/hero-section/2.png"
+            alt="Illustration 2"
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+
+        <div
+          className="absolute right-1/4 top-0 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-xl shadow-xl"
+          style={{ transform: "translate(-50%, -50%) rotate(35deg)" }}
+        >
+          <img
+            src="/src/assets/images/hero-section/3.png"
+            alt="Illustration 3"
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+      </div> */}
+
       {/* Titre principal avec animation typing */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-5xl md:text-7xl font-bold text-[#101010] mb-6 leading-tight"
+        className="text-5xl md:text-7xl font-bold text-[#101010] mb-6 leading-tight relative z-20 mt-32 md:mt-40"
       >
         Construisez des
         <br />
