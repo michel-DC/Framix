@@ -26,7 +26,7 @@ const HeroAnimations: React.FC = () => {
           className="mx-auto bg-transparent"
         >
           <img
-            src="/src/assets/images/hero-section/new.svg"
+            src="/images/hero-section/new.svg"
             alt="Hero section group"
             className="w-full max-w-3xl h-auto bg-transparent scale-105 md:scale-110 lg:scale-125 mx-auto"
             style={{ display: "block" }}
