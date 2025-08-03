@@ -2,21 +2,14 @@
 import HeroAnimations from './hero-animation';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
   {/* Fond décoratif avec dégradé subtil */}
-  <div class="absolute inset-0 bg-gradient-to-br from-[#F2F2FF] via-white to-white opacity-50"></div>
-  <div class="absolute top-20 left-10 w-32 h-32 bg-[#635BFF] rounded-full opacity-10 blur-3xl"></div>
-  <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#7D76FF] rounded-full opacity-5 blur-3xl"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#F2F2FF] via-white to-white opacity-20"></div>
+  <div class="absolute top-20 left-10 w-32 h-32 bg-[#635BFF] rounded-full opacity-5 blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#7D76FF] rounded-full opacity-3 blur-3xl"></div>
 
   <!-- Composant React hydraté -->
   <HeroAnimations client:load />
-
-  {/* Indicateur de scroll */}
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div class="w-6 h-10 border-2 border-[#635BFF] rounded-full flex justify-center">
-      <div class="w-1 h-3 bg-[#635BFF] rounded-full mt-2 animate-pulse"></div>
-    </div>
-  </div>
 </section>
 
 <style>

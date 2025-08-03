@@ -22,7 +22,7 @@ const { title = "Framix - L'outil no-code fait pour vous ", description } = Astr
 	</head>
 	<body class="min-h-screen bg-background font-sans antialiased">
 		<Header />
-		<main class="min-h-[calc(100vh-4rem)]">
+		<main class="min-h-[calc(100vh-4rem)] bg-pattern">
 			<slot />
 		</main>
 		<Footer />
@@ -33,4 +33,12 @@ const { title = "Framix - L'outil no-code fait pour vous ", description } = Astr
 
 <style is:global>
 	@import '../styles/globals.css';
+	
+	.bg-pattern {
+		background-image: url('/src/assets/images/background.svg');
+		background-repeat: repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
 </style> 

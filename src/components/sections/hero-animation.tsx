@@ -3,63 +3,103 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import HeroContent from "./hero-content";
 
-// Composant pour gérer toutes les animations de la Hero section
 const HeroAnimations: React.FC = () => {
   return (
-    <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      {/* Badge "Nouveau" */}
+    <div className="relative z-10 max-w-4xl mx-auto px-6 text-center bg-transparent">
+      {/* Badges vert tout en haut*/}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="inline-flex items-center gap-2 bg-[#E8FCEB] text-[#166534] px-4 py-2 rounded-full text-sm font-medium mb-8 border border-[#BBF7D0]"
+        className="mt-4 inline-flex items-center gap-2 bg-[#E8FCEB] text-[#166534] px-4 py-2 rounded-full text-sm font-medium mb-8 border border-[#BBF7D0]"
       >
         <span className="w-2 h-2 bg-[#22C55E] rounded-full animate-pulse"></span>
         Nouveau : Création de landing pages par blocs
       </motion.div>
 
-      {/* Images en éventail derrière le titre
-      <div className="relative mb-8">
-        <div
-          className="absolute left-1/4 top-0 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-xl shadow-xl"
-          style={{ transform: "translate(-50%, -50%) rotate(-35deg)" }}
+      {/* Image principale */}
+      <div className="relative bg-transparent">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mx-auto bg-transparent"
         >
           <img
-            src="/src/assets/images/hero-section/1.png"
-            alt="Illustration 1"
-            className="w-full h-full object-cover rounded-xl"
+            src="/src/assets/images/hero-section/new.svg"
+            alt="Hero section group"
+            className="w-full max-w-3xl h-auto bg-transparent scale-105 md:scale-110 lg:scale-125 mx-auto"
+            style={{ display: "block" }}
           />
+        </motion.div>
+      </div>
+
+      {/* Boutons de fonctionnalités en bas de l'image */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="flex flex-wrap justify-center gap-2 mb-8"
+      >
+        <div className="flex items-center gap-1.5 bg-green-50 border border-green-200 px-3 py-1.5 rounded-full">
+          <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center">
+            <span className="text-green-600 text-xs font-bold">$</span>
+          </div>
+          <span className="text-green-700 text-xs font-medium">
+            VENDRE DES PRODUITS
+          </span>
         </div>
 
-        <div
-          className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-xl z-10"
-          style={{ transform: "translate(-50%, -50%) rotate(0deg)" }}
-        >
-          <img
-            src="/src/assets/images/hero-section/2.png"
-            alt="Illustration 2"
-            className="w-full h-full object-cover rounded-xl"
-          />
+        <div className="flex items-center gap-1.5 bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-full">
+          <div className="w-4 h-4 bg-purple-100 rounded-full flex items-center justify-center">
+            <div className="w-2.5 h-2.5 bg-purple-600 rounded-sm"></div>
+          </div>
+          <span className="text-purple-700 text-xs font-medium">
+            PAGE D'ACCUEIL
+          </span>
         </div>
 
-        <div
-          className="absolute right-1/4 top-0 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-xl shadow-xl"
-          style={{ transform: "translate(-50%, -50%) rotate(35deg)" }}
-        >
-          <img
-            src="/src/assets/images/hero-section/3.png"
-            alt="Illustration 3"
-            className="w-full h-full object-cover rounded-xl"
-          />
+        <div className="flex items-center gap-1.5 bg-pink-50 border border-pink-200 px-3 py-1.5 rounded-full">
+          <div className="w-4 h-4 bg-pink-100 rounded-full flex items-center justify-center">
+            <div className="flex gap-0.5">
+              <div className="w-1 h-1.5 bg-pink-600 rounded-sm"></div>
+              <div className="w-1 h-1.5 bg-pink-600 rounded-sm"></div>
+            </div>
+          </div>
+          <span className="text-pink-700 text-xs font-medium">LIENS BIO</span>
         </div>
-      </div> */}
 
-      {/* Titre principal avec animation typing */}
+        <div className="flex items-center gap-1.5 bg-blue-50 border border-blue-200 px-3 py-1.5 rounded-full">
+          <div className="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+            <div className="flex flex-col gap-0.5">
+              <div className="w-2.5 h-0.5 bg-blue-600 rounded-sm"></div>
+              <div className="w-2.5 h-0.5 bg-blue-600 rounded-sm"></div>
+              <div className="w-2.5 h-0.5 bg-blue-600 rounded-sm"></div>
+            </div>
+          </div>
+          <span className="text-blue-700 text-xs font-medium">BLOG</span>
+        </div>
+
+        <div className="flex items-center gap-1.5 bg-yellow-50 border border-yellow-200 px-3 py-1.5 rounded-full">
+          <div className="w-4 h-4 bg-yellow-100 rounded-full flex items-center justify-center">
+            <div className="flex flex-col gap-0.5">
+              <div className="w-2.5 h-0.5 bg-yellow-600 rounded-sm"></div>
+              <div className="w-2.5 h-0.5 bg-yellow-600 rounded-sm"></div>
+              <div className="w-2.5 h-0.5 bg-yellow-600 rounded-sm"></div>
+            </div>
+          </div>
+          <span className="text-yellow-700 text-xs font-medium">
+            FORMULAIRE
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Titre h1 principal */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-5xl md:text-7xl font-bold text-[#101010] mb-6 leading-tight relative z-20 mt-32 md:mt-40"
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="text-5xl md:text-7xl font-bold text-[#101010] mb-6 leading-tight relative z-20"
       >
         Construisez des
         <br />
@@ -68,7 +108,6 @@ const HeroAnimations: React.FC = () => {
         </span>
       </motion.h1>
 
-      {/* Sous-titre */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,7 +120,7 @@ const HeroAnimations: React.FC = () => {
         Plus de code, plus de complexité, juste du résultat.
       </motion.p>
 
-      {/* Boutons d'action */}
+      {/* Boutons CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -103,7 +142,7 @@ const HeroAnimations: React.FC = () => {
         </Button>
       </motion.div>
 
-      {/* Statistiques */}
+      {/* Quelques stats*/}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
