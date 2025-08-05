@@ -1,6 +1,5 @@
 ---
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 ---
 
 <header class="bg-white border-b border-[#EDEDED] sticky top-0 z-50 backdrop-blur-sm bg-white/95">
@@ -20,10 +19,19 @@ import { Menu, X } from "lucide-react";
 
       <nav class="hidden md:flex items-center space-x-8">
         <a 
+          href="#steps" 
+          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
+        > 
+          Comment ?
+        </a>
+        <a 
           href="#features" 
           class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
         >
           Fonctionnalités
+        </a>
+        <a href="#testimonials" class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium">
+          Témoignages
         </a>
         <a 
           href="#pricing" 
@@ -36,12 +44,6 @@ import { Menu, X } from "lucide-react";
           class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
         >
           FAQ
-        </a>
-        <a 
-          href="/contact" 
-          class="text-gray-600 hover:text-[#635BFF] transition-colors font-medium"
-        >
-          Contact
         </a>
       </nav>
 
@@ -74,6 +76,7 @@ import { Menu, X } from "lucide-react";
         >
           Fonctionnalités
         </a>
+
         <a 
           href="#pricing" 
           class="block text-gray-600 hover:text-[#635BFF] transition-colors font-medium py-2"
